@@ -7,4 +7,4 @@ do
   aws iam create-user --user-name workshop-user --profile workshop$i
   aws iam attach-user-policy --user-name workshop-user --policy-arn $WORKSHOP_USER_POLICY_ARN --profile workshop$i
   aws iam create-login-profile --user-name workshop-user --password merahputih --password-reset-required --profile workshop$i
-done 
+done
