@@ -1,4 +1,5 @@
 regions:
+- global
 - ap-southeast-1
 - ap-southeast-2
 - ap-south-1
@@ -19,85 +20,18 @@ regions:
 - us-west-1
 - us-west-2
 
+
+account-blacklist:
+    - "211147541504"
+
 accounts:
     654608353261:
-        presets:
-        - "common"
-    243307025833:
-        presets:
-        - "common"
-    364045211328:
-        presets:
-        - "common"
-    120777676743:
-        presets:
-        - "common"
-    629816542392:
-        presets:
-        - "common"
-    272032699539:
-        presets:
-        - "common"
-    377558601397:
-        presets:
-        - "common"
-    264243152576:
-        presets:
-        - "common"
-    469426197820:
-        presets:
-        - "common"
-    168444416812:
-        presets:
-        - "common"
-    837653616106:
-        presets:
-        - "common"
-    320584412453:
-        presets:
-        - "common"
-    836894510771:
-        presets:
-        - "common"
-    920435512271:
-        presets:
-        - "common"
-    914574185408:
-        presets:
-        - "common"
-    663746518577:
-        presets:
-        - "common"
-    658675308019:
-        presets:
-        - "common"
-    829225225110:
-        presets:
-        - "common"
-    332219159250:
-        presets:
-        - "common"
-    730032338122:
-        presets:
-        - "common"
-    164851679156:
-        presets:
-        - "common"
-    045522035246:
-        presets:
-        - "common"
-    815150078459:
-        presets:
-        - "common"
-    088305287284:
-        presets:
-        - "common"
-    881348607883:
-        presets:
-        - "common"
-presets:
-  common:
-    filter:
-      IAMRole:
-      - "yudho-workshop"
+        filters:
+          IAMRole:
+          - "yudho-workshop2"
+          IAMRolePolicyAttachment:
+          - "admin -> AdministratorAccess"
+          IAMPolicy:
+          - "AdministratorAccess"
+    
   
