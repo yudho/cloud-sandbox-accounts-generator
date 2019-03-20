@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROFILE_PREFIX=workshop
+PROFILE_PREFIX=workshop
 
 for i in {2..26}
 do 

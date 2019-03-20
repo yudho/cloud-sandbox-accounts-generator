@@ -12,7 +12,7 @@ GUIDES
 CREATING ACCOUNTS AND USERS
 1. Run create_aws_accounts.sh to create AWS accounts. Change the range in for-loop bracket {} as necessary to define how many accounts you need
 2. Run create_account_alias.sh to generate alias to your accounts
-3. Set AWS_USER_PASSWORD environtment variable and run create_users.sh
+3. Set AWS_USER_PASSWORD environment variable and run create_users.sh
 4. Run check_aws_accounts.sh to check whether accounts and users were created, and to list IAM users.
 
 RESTRICTING ACCESS FOR USERS - IMPORTANT!!!
@@ -23,6 +23,7 @@ RESTRICTING ACCESS FOR USERS - IMPORTANT!!!
    3.2 detaching the policy attached to that profile role from that role e.g. AdministratorAccess
    3.3 deleting any IAM policy
    3.4 All access to AWS Organization
+NOTE: This may be automated in the future -> area of improvement!
 
 DELETING USERS AND RESOURCES
 1. Run delete_users.sh
@@ -37,4 +38,3 @@ NOTES
 1. delete_resource.sh needs aws-nuke program. You can use the included aws-nuke binary that only works in Linux environment (e.g. Cloud9)
    Or, you can download other aws-nuke binary, or build your own. Refer to https://github.com/rebuy-de/aws-nuke
 2. If you use Cloud9, you need to disable its temporary credentials feature, and user accessKey + secretKey for an IAM user instead
-3. IMPORTANT: Before running the workshop, makes sure

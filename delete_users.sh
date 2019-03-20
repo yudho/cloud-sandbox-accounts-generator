@@ -5,7 +5,7 @@ USER_NAME=workshop-user
 
 PROFILE_PREFIX=workshop
 
-for i in {61..70}
+for i in {61..61}
 do
   ACCOUNT_ID=$(aws sts get-caller-identity --profile $PROFILE_PREFIX$i | jq -r ".Account")
   echo $ACCOUNT_ID

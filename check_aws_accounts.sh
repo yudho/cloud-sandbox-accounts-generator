@@ -2,8 +2,8 @@
 
 export PROFILE_PREFIX=workshop
 
-for i in {2..26}
+for i in {61..70}
 do
-  echo workshop$i 
+  echo $PROFILE_PREFIX$i 
   aws iam list-users --profile $PROFILE_PREFIX$i
 done
