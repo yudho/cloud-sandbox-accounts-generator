@@ -22,13 +22,13 @@ regions:
 
 
 account-blacklist:
-    - "211147541504"
+    - "111111111111"
 
 accounts:
-    654608353261:
+    000000000000:
         filters:
           IAMRole:
-          - "yudho-workshop2"
+          - "ROLE_NAME_HERE"
           IAMRolePolicyAttachment:
           - "admin -> AdministratorAccess"
           IAMPolicy:
