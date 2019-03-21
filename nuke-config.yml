@@ -24,18 +24,7 @@ regions:
 account-blacklist:
   - "111111111111"
 
-resource-types:
-  excludes:
-    - IAMRolePolicyAttachment
-
 accounts:
-  000000000000:
-    filters:
-      IAMRole:
-      - "ROLE_NAME_HERE"
-      IAMRolePolicyAttachment:
-      - "ROLE_NAME_HERE -> AdministratorAccess"
-      IAMPolicy:
-      - "AdministratorAccess"
+  "000000000000": {}
     
   

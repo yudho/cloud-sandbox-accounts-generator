@@ -1,0 +1,65 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CreateOrChangeOnlyWithBoundary",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateUser",
+                "iam:DeleteUserPolicy",
+                "iam:AttachUserPolicy",
+                "iam:DetachUserPolicy",
+                "iam:PutUserPermissionsBoundary",
+                "iam:CreateRole",
+                "iam:DeleteRolePolicy",
+                "iam:AttachRolePolicy",
+                "iam:DetachRolePolicy",
+                "iam:PutRolePermissionsBoundary"
+            ],
+            "Resource": "*",
+            "Condition": 
+            {
+                "StringEquals": 
+                {
+                    "iam:PermissionsBoundary": "arn:aws:iam::*:policy/WorkshopBoundaries"
+                }
+                
+            }
+        },
+        {
+            "Sid": "AdministratorAccess",
+            "Effect": "Allow",
+            "Action": "*",
+            "Resource": "*"
+        },
+        {
+            "Sid": "NoBoundaryPolicyEdit",
+            "Effect": "Deny",
+            "Action": [
+                "iam:CreatePolicyVersion",
+                "iam:DeletePolicy",
+                "iam:DeletePolicyVersion",
+                "iam:SetDefaultPolicyVersion"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:policy/WorkshopBoundaries",
+                "arn:aws:iam::*:policy/AdminBoundaries"
+            ]
+        },
+        {
+            "Sid": "NoEditOnMainLoginRole",
+            "Effect": "Deny",
+            "Action": "iam:*",
+            "Resource": "ROLE_ARN_HERE"
+        },
+        {
+            "Sid": "NoUserAndRoleBoundaryDelete",
+            "Effect": "Deny",
+            "Action": [
+                "iam:DeleteUserPermissionsBoundary",
+                "iam:DeleteRolePermissionsBoundary"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
