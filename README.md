@@ -12,7 +12,7 @@ GUIDES
 -----------------------------
 CREATING ACCOUNTS AND USERS
 1. Run create-aws-accounts.sh to create AWS accounts
-2. Run create_users.sh to create IAM users
+2. Run create-users.sh to create IAM users
 3. Run check-aws-accounts.sh to check whether accounts and users were created, and to list IAM users.
 
 DELETING USERS AND RESOURCES
@@ -20,9 +20,11 @@ DELETING USERS AND RESOURCES
 2. Check nuke-config.yml, make sure the account to be deleted is resetted to 
       "000000000000": {}
    and run delete-resources.sh
+   NOTE: This will delete DEFAULT VPCS, SUBNETS, and associated resources.
 
 PREPARING FOR ANOTHER WORKSHOP
-1. Just run create-users.sh, since the accounts are already created and never deleted.
+1. Run create-users.sh, since the accounts are already created and never deleted.
+2. Run create-default-vpcs.sh to re-create default VPCs. It will create VPC in 4 regions (us-east-1, ap-southeast-1, ap-southeast-2, and ap-northeast-1. You can easily modify the script to add more regions or change regions to be covered.
 
 LIST ACCOUNT IDS
 1. Run get-account-ids.sh
